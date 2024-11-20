@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { WORDS_AND_HINTS } from "../constants.js";
-
+import { Howl } from "howler";
 export const Game = () => {
   const [hiddenWord, setHiddenWord] = useState("");
   const [hints, setHints] = useState([]);
@@ -11,6 +11,10 @@ export const Game = () => {
   const [currentGuess, setCurrentGuess] = useState("");
   const [gameStatus, setGameStatus] = useState("playing"); // "playing", "won", "lost"
   const [hintsGiven, setHintsGiven] = useState([]);
+
+  // Sound effects
+  const correctSound = new Howl({ src: ["src/assets/sounds/correct.mp3"] });
+  const wrongSound = new Howl({ src: ["src/assets/sounds/wrong.mp3"] });
 
   // Initialize hidden word and hints
   useEffect(() => {
@@ -32,8 +36,10 @@ export const Game = () => {
   const handleGuess = () => {
     if (currentGuess.toUpperCase() === hiddenWord) {
       setGameStatus("won");
+      correctSound.play();
     } else {
       setGuessesLeft((prev) => prev - 1);
+      wrongSound.play();
       if (guessesLeft - 1 <= 0) {
         setGameStatus("lost");
       }
