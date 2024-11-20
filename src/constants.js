@@ -1,22 +1,22 @@
 export const WORDS_AND_HINTS = [
   {
     word: "APPLE",
-    hints: ["It's a fruit.", "It’s often red or green."],
+    hints: ["It's a fruit. Starts with 'A'."],
   },
   {
     word: "ORANGE",
-    hints: ["It's a fruit.", "It has a round shape and is orange in color."],
+    hints: ["It's a fruit. Starts with 'O'."],
   },
   {
     word: "BANANA",
-    hints: ["It's a fruit.", "It’s yellow and comes in a bunch."],
+    hints: ["It's a fruit. Starts with 'B'."],
   },
   {
     word: "PEAR",
-    hints: ["It's a fruit.", "It has a teardrop shape."],
+    hints: ["It's a fruit. Starts with 'P'."],
   },
   {
     word: "MANGO",
-    hints: ["It's a tropical fruit.", "It's known as the king of fruits."],
+    hints: ["It's a tropical fruit. Starts with 'M'."],
   },
 ];

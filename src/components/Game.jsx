@@ -53,15 +53,17 @@ export const Game = () => {
 
   // Reset game
   const resetGame = () => {
-    window.location.reload(); // Simple page reload to reset the game
+    window.location.reload(); // page reload to reset the game
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-      <h1 className="text-4xl font-bold mb-4">Word Guessing Game</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200">
+      <h1 className="text-4xl font-bold mb-4 text-blue-900">
+        Word Guessing Game
+      </h1>
       {gameStatus === "playing" && (
         <>
-          <p className="text-lg">
+          <p className="text-lg font-bold text-red-500">
             Time Left: {Math.floor(timeLeft / 60)}:{timeLeft % 60}
           </p>
           <p className="text-lg">Guesses Left: {guessesLeft}</p>
@@ -72,7 +74,7 @@ export const Game = () => {
               value={currentGuess}
               onChange={(e) => setCurrentGuess(e.target.value)}
               placeholder="Enter your guess"
-              className="border p-2 rounded"
+              className="border p-2 rounded "
             />
             <button
               onClick={handleGuess}
